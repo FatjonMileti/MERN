@@ -9,7 +9,7 @@ router.route("/", authMiddleware)
   .get(productController.getProductList)
   .post(productController.createProduct);
 
-router.route("/:id")
+router.route("/:id", authMiddleware)
   .put(getProduct, productController.updateProduct)
   .delete(getProduct, productController.deleteProduct);
 
